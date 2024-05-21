@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Namespace for API versioning
   namespace :api do
-    namespace :v3 do
+    namespace :v1 do
       # Devise JWT authentication routes with custom paths
       devise_for :users, path: '', path_names: {
         sign_in: 'login',
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
         registration: 'signup'
       },
       controllers: {
-        sessions: 'api/v3/users/sessions',
-        registrations: 'api/v3/users/registrations'
+        sessions: 'api/v1/users/sessions',
+        registrations: 'api/v1/users/registrations'
       }
 
       # Weather API routes
