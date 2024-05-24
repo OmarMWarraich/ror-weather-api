@@ -71,3 +71,7 @@ gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
+
+group :development, :test do
+  gem 'byebug'
+end
