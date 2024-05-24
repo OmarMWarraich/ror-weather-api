@@ -24,4 +24,5 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
       status: {code: 200, message: 'Logged out successfully.'}
     }, status: :ok
   end
+
 end

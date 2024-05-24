@@ -13,10 +13,11 @@ const Login = ({ setCurrUser, setShow }) => {
         body: JSON.stringify(userInfo),
       });
       const data = await response.json();
-      if (!response.ok) throw data.error;
+      setCurrUser(data.data);
 
+      if (!response.ok) throw data.error;
       localStorage.setItem("token", response.headers.get("Authorization"));
-      setCurrUser(data);
+      localStorage.setItem("user", JSON.stringify(data.data));
     } catch (error) {
       console.log("error", error);
     }

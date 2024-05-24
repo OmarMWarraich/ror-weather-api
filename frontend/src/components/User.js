@@ -1,18 +1,23 @@
 import Signup from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
-// import PrivateText from "./PrivateText";
+import Locations from "./Locations";
+
 import { useState } from "react";
 const User = ({ currUser, setCurrUser }) => {
   const [show, setShow] = useState(true);
-  if (currUser)
+
+  if (currUser) {
+    let name = currUser.email.split("@")[0];
+    name = name.charAt(0).toUpperCase() + name.slice(1);
     return (
       <div>
-        Hello {currUser.email}
-        {/* {/* <PrivateText currUser={currUser} /> */}
+        Hello <b>{name}</b>
+        <Locations />
         <Logout setCurrUser={setCurrUser} />
       </div>
     );
+  }
   return (
     <div>
       {show ? (

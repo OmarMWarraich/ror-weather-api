@@ -9,6 +9,7 @@
 #   end
 
 l = Location.create(name: "New York City")
+p = Location.create(name: "Paris")
 l.recordings.create(temp: 32, status: "cloudy")
 l.recordings.create(temp: 34, status: "rainy")
 l.recordings.create(temp: 30, status: "rainy")
